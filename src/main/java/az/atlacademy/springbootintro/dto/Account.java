@@ -3,15 +3,25 @@ package az.atlacademy.springbootintro.dto;
 import java.util.Objects;
 
 public class Account {
+    private Long id;
     private String name;
     private String customer;
 
-    public Account(String name, String customer) {
+    public Account(Long id, String name, String customer) {
+        this.id = id;
         this.name = name;
         this.customer = customer;
     }
 
     public Account() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -35,11 +45,13 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(name, account.name) && Objects.equals(customer, account.customer);
+        return Objects.equals(id, account.id) && Objects.equals(name, account.name) && Objects.equals(customer, account.customer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, customer);
+        return Objects.hash(id, name, customer);
     }
+
+
 }

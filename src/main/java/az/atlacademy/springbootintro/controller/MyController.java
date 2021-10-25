@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/my")
 //@Controller
 public class MyController {
 /*
